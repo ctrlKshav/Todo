@@ -14,6 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 import os
+import dj_database_url
 
 load_dotenv()
 
@@ -106,6 +107,11 @@ DATABASES = {
         "PORT": os.getenv("DB_PORT"),
     }
 }
+
+DATABASES = {
+    # Replace this value with your local database's connection string.   
+    'default': dj_database_url.config(    
+        default='postgresql://todo_db_render_user:GNYoeoWHjdbuQ2VZlqORKzLnrtNHCauv@dpg-crc9tcjqf0us73ck1ba0-a.singapore-postgres.render.com/todo_db_render',conn_max_age=600)}
 
 
 # Password validation
