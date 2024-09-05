@@ -16,7 +16,7 @@ api.interceptors.request.use(
         return config
     },
     (error) => {
-        return Promise.reject(error)
+        return Promise.reject(error + '|| testing error in api.js')
     }
 )
 
